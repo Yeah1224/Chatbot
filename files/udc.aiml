@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+  <!-- Chào hỏi -->
+  <category>
+    <pattern>HI *</pattern>
+    <template>Xin chào! 👋  Bạn muốn đặt món gì hôm nay? 😊
+        <button>
+          <text>Món chính</text>
+          <postback>MÓN CHÍNH</postback>
+        </button>
+        <button>
+          <text>Món tráng miệng</text>
+          <postback>MÓN TRÁNG MIỆNG</postback>
+        </button>
+    </template>
+  </category>
+  
+    <category>
+    <pattern>* HI</pattern>
+    <template>Xin chào! 👋  Bạn muốn đặt món gì hôm nay? 😊
+        <button>
+          <text>Món chính</text>
+          <postback>MÓN CHÍNH</postback>
+        </button>
+        <button>
+          <text>Món tráng miệng</text>
+          <postback>MÓN TRÁNG MIỆNG</postback>
+        </button>
+    </template>
+  </category>
+    <category>
+    <pattern>HI</pattern>
+    <template>Xin chào! 👋  Bạn muốn đặt món gì hôm nay? 😊
+        <button>
+          <text>Món chính</text>
+          <postback>MÓN CHÍNH</postback>
+        </button>
+        <button>
+          <text>Món tráng miệng</text>
+          <postback>MÓN TRÁNG MIỆNG</postback>
+        </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>CHÀO *</pattern>
+    <template>Xin chào! 👋  Bạn muốn đặt món gì hôm nay? 😊
+        <button>
+          <text>Món chính</text>
+          <postback>MÓN CHÍNH</postback>
+        </button>
+        <button>
+          <text>Món tráng miệng</text>
+          <postback>MÓN TRÁNG MIỆNG</postback>
+        </button>
+    </template>
+  </category>
+  
+    <category>
+    <pattern>* CHÀO</pattern>
+    <template>Xin chào! 👋  Bạn muốn đặt món gì hôm nay? 😊
+        <button>
+          <text>Món chính</text>
+          <postback>MÓN CHÍNH</postback>
+        </button>
+        <button>
+          <text>Món tráng miệng</text>
+          <postback>MÓN TRÁNG MIỆNG</postback>
+        </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>HELLO *</pattern>
+    <template>Xin chào! 👋  Bạn muốn đặt món gì hôm nay? 😊
+        <button>
+          <text>Món chính</text>
+          <postback>MÓN CHÍNH</postback>
+        </button>
+        <button>
+          <text>Món tráng miệng</text>
+          <postback>MÓN TRÁNG MIỆNG</postback>
+        </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>HEY *</pattern>
+    <template>Xin chào! 👋  Bạn muốn đặt món gì hôm nay? 😊
+        <button>
+          <text>Món chính</text>
+          <postback>MÓN CHÍNH</postback>
+        </button>
+        <button>
+          <text>Món tráng miệng</text>
+          <postback>MÓN TRÁNG MIỆNG</postback>
+        </button>
+    </template>
+  </category>
+
+  <!-- Món chính -->
+  <category>
+    <pattern>MÓN CHÍNH </pattern>
+    <template>
+      <card>
+        <title>Món chính</title>
+        <subtitle>Bạn muốn ăn gì?</subtitle>
+        <button>
+          <text>Cơm gà (35.000 VNĐ)</text>
+          <postback>CƠM GÀ</postback>
+        </button>
+        <button>
+          <text>Bún bò (40.000 VNĐ)</text>
+          <postback>BÚN BÒ</postback>
+        </button>
+        <button>
+          <text>Mì xào (30.000 VNĐ)</text>
+          <postback>MÌ XÀO</postback>
+        </button>
+        <button>
+          <text>Hủ tiếu (32.000 VNĐ)</text>
+          <postback>HỦ TIẾU</postback>
+        </button>
+        <button>
+          <text>Bánh mì (25.000 VNĐ)</text>
+          <postback>BÁNH MÌ</postback>
+        </button>
+      </card>
+    </template>
+  </category>
+  <category>
+    <pattern>CƠM GÀ</pattern>
+    <template>
+      Bạn muốn phần cơm gà như thế nào?
+      <button>
+        <text>Phần nhỏ (35.000 VNĐ)</text>
+        <postback>CƠM GÀ NHỎ</postback>
+      </button>
+      <button>
+        <text>Phần lớn (40.000 VNĐ)</text>
+        <postback>CƠM GÀ LỚN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>CƠM GÀ NHỎ</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Cơm gà phần nhỏ (35.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>CƠM GÀ LỚN</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Cơm gà phần lớn (40.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>BÚN BÒ</pattern>
+    <template>
+      Bạn muốn phần bún bò như thế nào?
+      <button>
+        <text>Phần nhỏ (40.000 VNĐ)</text>
+        <postback>BÚN BÒ NHỎ</postback>
+      </button>
+      <button>
+        <text>Phần lớn (45.000 VNĐ)</text>
+        <postback>BÚN BÒ LỚN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>BÚN BÒ NHỎ</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Bún bò phần nhỏ (40.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>BÚN BÒ LỚN</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Bún bò phần lớn (45.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>MÌ XÀO</pattern>
+    <template>
+      Bạn muốn mì xào loại nào?
+      <button>
+        <text>Mì xào bò (30.000 VNĐ)</text>
+        <postback>MÌ XÀO BÒ</postback>
+      </button>
+      <button>
+        <text>Mì xào hải sản (35.000 VNĐ)</text>
+        <postback>MÌ XÀO HẢI SẢN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>MÌ XÀO BÒ</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Mì xào bò (30.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>MÌ XÀO HẢI SẢN</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Mì xào hải sản (35.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>HỦ TIẾU</pattern>
+    <template>
+      Bạn muốn hủ tiếu loại nào?
+      <button>
+        <text>Hủ tiếu Nam Vang (32.000 VNĐ)</text>
+        <postback>HỦ TIẾU NAM VANG</postback>
+      </button>
+      <button>
+        <text>Hủ tiếu mì (30.000 VNĐ)</text>
+        <postback>HỦ TIẾU MÌ</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>HỦ TIẾU NAM VANG</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Hủ tiếu Nam Vang (32.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>HỦ TIẾU MÌ</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Hủ tiếu mì (30.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>BÁNH MÌ</pattern>
+    <template>
+      Bạn muốn bánh mì loại nào?
+      <button>
+        <text>Bánh mì thịt (25.000 VNĐ)</text>
+        <postback>BÁNH MÌ THỊT</postback>
+      </button>
+      <button>
+        <text>Bánh mì chả (28.000 VNĐ)</text>
+        <postback>BÁNH MÌ CHẢ</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>BÁNH MÌ THỊT</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Bánh mì thịt (25.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>BÁNH MÌ CHẢ</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Bánh mì chả (28.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <!-- Món tráng miệng -->
+  <category>
+    <pattern>MÓN TRÁNG MIỆNG</pattern>
+    <template>
+      <card>
+        <image>https://images.foody.vn/res/1055/1055039/photos/mon-an-1676148581.jpg</image>
+        <title>Món tráng miệng</title>
+        <subtitle>Bạn muốn ăn gì?</subtitle>
+        <button>
+          <text>Kem (20.000 VNĐ)</text>
+          <postback>KEM</postback>
+        </button>
+        <button>
+          <text>Tráng miệng (25.000 VNĐ)</text>
+          <postback>TRÁNG MIỆNG</postback>
+        </button>
+        <button>
+          <text>Hoa quả (15.000 VNĐ)</text>
+          <postback>HOA QUẢ</postback>
+        </button>
+      </card>
+    </template>
+  </category>
+
+  <category>
+    <pattern>KEM</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Kem (20.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>TRÁNG MIỆNG</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Tráng miệng (25.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <category>
+    <pattern>HOA QUẢ</pattern>
+    <template>
+      <think>
+        <set name="don_hang">
+          <get name="don_hang"></get>
+          Hoa quả (15.000 VNĐ), 
+        </set>
+      </think>
+      Bạn muốn đặt thêm gì không?
+      <button>
+        <text>Có</text>
+        <postback>TIẾP TỤC ĐẶT HÀNG</postback>
+      </button>
+      <button>
+        <text>Không</text>
+        <postback>THANH TOÁN</postback>
+      </button>
+    </template>
+  </category>
+
+  <!-- Xử lý postback từ nút "Cảm ơn" -->
+  <category>
+    <pattern>THANK YOU</pattern>
+    <template>
+      Cảm ơn bạn đã lựa chọn chúng tôi! Hãy cho chúng tôi biết nếu bạn cần thêm sự trợ giúp nào.
+    </template>
+  </category>
+
+  <!-- Xử lý postback "TIẾP TỤC ĐẶT HÀNG" -->
+  <category>
+    <pattern>TIẾP TỤC ĐẶT HÀNG</pattern>
+    <template>
+      <srai>MÓN CHÍNH</srai>  <!-- Hoặc <srai>MÓN TRÁNG MIỆNG</srai> nếu bạn muốn tiếp tục đặt món tráng miệng -->
+    </template>
+  </category>
+
+  <!-- Xử lý postback "THANH TOÁN" -->
+  <category>
+    <pattern>THANH TOÁN</pattern>
+    <template>
+      <think>
+        <set name="gia_tri_don_hang">  </set>  <!-- Lấy giá trị đơn hàng từ biến -->
+        <set name="ma_qr_dong">https://img.freepik.com/premium-vector/qr-code-isolated-transparent-background_389832-976.jpg?w=2000</set>  <!-- Ví dụ mã QR là một hình ảnh -->
+      </think>
+      Đơn hàng của bạn là: <get name="don_hang"></get>
+      Đây là mã QR cho đơn hàng của bạn: 
+      <image><get name="ma_qr_dong"></get></image>  <!-- Hiển thị hình ảnh -->
+      <think>
+        <set name="don_hang"></set>  <!-- Reset biến đơn hàng -->
+      </think>
+      Cảm ơn bạn đã đặt hàng! 👋
+    </template>
+  </category>
+
+  <!-- Phản hồi mặc định nếu đầu vào không khớp với bất kỳ mẫu nào -->
+  <category>
+    <pattern>*</pattern>
+    <template>
+      Xin lỗi, tôi không hiểu câu đó. Bạn có thể cho tôi biết bạn muốn đặt món gì không?
+    </template>
+  </category>
+
+</aiml>
